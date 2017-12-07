@@ -1,0 +1,23 @@
+#giphy-buttons{
+    margin-bottom: 25px;
+}
+
+#giphy-buttons .btn{
+    margin-right: 10px;
+}
+
+.giphy-img{
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+.giphy-img p{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.active{
+    background: #5cb85c !important;
+    border-color: #5cb85c !important;
+}
