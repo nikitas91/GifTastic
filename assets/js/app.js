@@ -5,7 +5,10 @@ var apiKey = "GXXIPKE7dL9zNyQLgPJCHj85PQe7eNyL";
 $("#add-topic").on("click", function () {
     event.preventDefault();
     var topicName = $("#topic-input").val().trim().toLowerCase();
-    if (topics.indexOf(topicName) >= 0) {
+    if (!topicName) {
+        alert("Enter a sport!")
+    }
+    else if (topics.indexOf(topicName) >= 0) {
         alert("Topic already added!");
     }
     else {
@@ -39,7 +42,7 @@ $("#giphy-buttons").on("click", ".btn-giphy", function () {
         .done(function (response) {
             var giphyResults = response.data;
 
-            for(var i = 0; i < giphyResults.length; i++){
+            for (var i = 0; i < giphyResults.length; i++) {
                 var gifDiv = $("<div>");
                 gifDiv.addClass("giphy-img");
                 var gifRating = $("<p>").text("Rating: " + giphyResults[i].rating);
@@ -55,14 +58,14 @@ $("#giphy-buttons").on("click", ".btn-giphy", function () {
         });
 });
 
-$("#giphy-images").on("click", ".gif", function(){
+$("#giphy-images").on("click", ".gif", function () {
     var state = $(this).attr("data-state");
 
-    if(state === "still"){
+    if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
     }
-    else if(state === "animate"){
+    else if (state === "animate") {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
     }
