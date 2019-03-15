@@ -1,12 +1,12 @@
 
-var topics = ["hockey", "football", "baseball", "curling", "volleyball", "basketball", "skiing", "snowboarding"];
+var topics = ["cat", "omg", "hockey", "rainbow"];
 var apiKey = "GXXIPKE7dL9zNyQLgPJCHj85PQe7eNyL";
 
 $("#add-topic").on("click", function () {
     event.preventDefault();
     var topicName = $("#topic-input").val().trim().toLowerCase();
     if (!topicName) {
-        alert("Enter a sport!")
+        alert("Enter a topic!")
     }
     else if (topics.indexOf(topicName) >= 0) {
         alert("Topic already added!");
